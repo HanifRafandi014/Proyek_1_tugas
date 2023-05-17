@@ -6,20 +6,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Barang_Masuk;
 
-class Supplier extends Model
+class Barang extends Model
 {
     use HasFactory;
-    protected $table="supplier"; 
+
+    protected $table="barang"; 
     public $timestamps= false;
     protected $primaryKey = 'id';
 
     protected $fillable = [
         'id',
-        'nama_supplier',
-        'no_telepon',
+        'nama_barang',
+        'stok',
+        'harga',
     ];
 
     public function barang_masuk(){
-        return $this->hasMany(Barang_Masuk::class);
+        return $this->belongsTo(Barang_Masuk::class);
     }
 }

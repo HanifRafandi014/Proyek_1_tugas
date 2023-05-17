@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class SuplierSeeder extends Seeder
 {
@@ -14,6 +15,9 @@ class SuplierSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('supplier')->insert([
+            'nama_supplier'=> 'Devita Rahmadiaz',
+            'no_telepon'=> '081249573646'
+        ]);
     }
 }

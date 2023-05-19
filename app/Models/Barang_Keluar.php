@@ -5,16 +5,16 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Barang;
-use App\Models\Supplier;
+use App\Models\Staff;
 
-class Barang_Masuk extends Model
+class Barang_Keluar extends Model
 {
     use HasFactory;
 
-    protected $table='barang_masuk';
+    protected $table='barang_keluar';
 
-    public function supplier(){
-        return $this->belongsTo(Supplier::class);
+    public function staff(){
+        return $this->belongsTo(Staff::class);
     }
 
     public function barang(){

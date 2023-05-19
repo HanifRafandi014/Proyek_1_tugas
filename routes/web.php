@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,6 +19,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+<<<<<<< HEAD
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
@@ -29,3 +31,10 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+=======
+Auth::routes();
+Route::get('/barang', [App\Http\Controllers\BarangController::class, 'getBarang']);
+Route::get('/staff', [App\Http\Controllers\StaffController::class, 'getStaff']);
+Route::get('/supplier', [App\Http\Controllers\SupplierController::class, 'getSupplier']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+>>>>>>> ab1a4886f298b1b0c05106e4a180f76ad11723bf

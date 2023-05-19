@@ -14,23 +14,20 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body class="font-sans antialiased">
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
+    <body class="font-sans text-gray-900 antialiased"> 
+        <div class="grid grid-cols-2 grid-rows-1 gap-0">
+            <div class="w-full h-screen md:w-auto justify-center flex items-center bg-[#D2D8DF]">
+                <img src="{{ asset('/img/logoPT.png') }}" alt="" srcset="">
+            </div>
 
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
+            <div class="w-full h-screen md:w-auto justify-center flex items-center bg-[#D2D8DF] ">
+                <div class="w-full sm:max-w-md mt-6 px-6 py-4 bg-white shadow-md overflow-hidden sm:rounded-lg">
+                    {{ $slot }}
+                </div>
+            </div>
 
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
+
         </div>
+
     </body>
 </html>

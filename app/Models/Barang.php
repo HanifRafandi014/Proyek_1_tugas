@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Barang_Masuk;
+use App\Models\Barang_Keluar;
 
 class Barang extends Model
 {
@@ -23,5 +24,9 @@ class Barang extends Model
 
     public function barang_masuk(){
         return $this->belongsTo(Barang_Masuk::class);
+    }
+
+    public function barang_keluar(){
+        return $this->belongsTo(Barang_Keluar::class);
     }
 }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BarangController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,5 +19,7 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
+Route::get('/barang', [App\Http\Controllers\BarangController::class, 'getBarang']);
+Route::get('/staff', [App\Http\Controllers\StaffController::class, 'getStaff']);
+Route::get('/supplier', [App\Http\Controllers\SupplierController::class, 'getSupplier']);
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

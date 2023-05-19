@@ -112,7 +112,7 @@
 		</div>
 		<button>Sign Up</button>
 		<div class="member">
-			Already a member? <a href="/auth/login.php">Login Here</a>
+			Already a member? <a href="/auth/login.blade.php">Login Here</a>
 		</div>
 	</div>
 </body>

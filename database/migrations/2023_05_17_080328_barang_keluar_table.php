@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Carbon;
 
 return new class extends Migration
 {
@@ -14,15 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('barang_masuk', function (Blueprint $table) {
+        Schema::create('barang_keluar', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('supplier_id')->nullable();
+            $table->unsignedBigInteger('staff_gudang_id')->nullable();
             $table->unsignedBigInteger('barang_id')->nullable();
             $table->integer('jumlah');
             $table->integer('harga');
             $table->integer('total');
-            $table->date('tanggal_masuk');
-            $table->foreign('supplier_id')->references('id')->on('supplier');
+            $table->date('tanggal_keluar');
+            $table->foreign('staff_gudang_id')->references('id')->on('staff_gudang');
             $table->foreign('barang_id')->references('id')->on('barang');
             $table->timestamps();
         });
@@ -35,6 +34,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('barang_masuk');
+        Schema::dropIfExists('barang_keluar');
     }
 };

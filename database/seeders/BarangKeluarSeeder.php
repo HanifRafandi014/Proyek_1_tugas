@@ -6,7 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class StaffSeeder extends Seeder
+class BarangKeluarSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -15,9 +15,13 @@ class StaffSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('staff')->insert([
-            'nama_staff'=> 'Kholid Maulidi',
-            'no_telepon'=> '087750897177'
+        DB::table('barang_keluar')->insert([
+            'staff_gudang_id'=> '1',
+            'barang_id'=> '1',
+            'jumlah'=> 7,
+            'harga'=> 20000,
+            'total'=> 140000,
+            'tanggal_keluar'=> '2003-03-22',
         ]);
     }
 }

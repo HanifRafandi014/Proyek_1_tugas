@@ -109,7 +109,7 @@
 		<button class="two">Sign Up</button>
 
 		<div class="member">
-			Not a member? <a href="/auth/register.php">Register Now</a>
+			Not a member? <a href="/auth/register.blade.php">Register Now</a>
 		</div>
 	</div>
 </body>
